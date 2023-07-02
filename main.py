@@ -58,7 +58,7 @@ def main():
 
     queue_item = jenkins.build_job(job_name, **parameters)
 
-    logging.info('Requested to build job. Checking for {wait_start}');
+    logging.info(f'Requested to build job. Checking for {wait_start} which is cast from {os.environ.get("INPUT_WAIT_START")}');
 
     if not wait_start:
         logging.info("Not waiting for build to start.")
