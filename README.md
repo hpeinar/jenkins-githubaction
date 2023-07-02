@@ -55,6 +55,7 @@ jobs:
 | `parameters` _(optional)_  | Build parameters in JSON format e.g. `{"field1":"value1"}`   | |
 | `cookies` _(optional)_  | Cookies to include in HTTP requests in JSON format e.g. `{"field1":"value1"}`   | |
 | `wait` _(optional)_  | Should the runner wait for the build to finish and provide ok status   | True |
+| `wait_start` _(optional)_  | Should the runner wait for the build to start   | True |
 | `timeout` _(optional)_  | Timeout in seconds for build to complete   | 600 |
 | `start_timeout` _(optional)_  | Timeout in seconds for build to start | 600 |
 | `interval` _(optional)_  | ow frequently in seconds to query Jenkins for build status  | 5 |

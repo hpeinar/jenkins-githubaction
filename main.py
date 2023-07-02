@@ -19,6 +19,7 @@ def main():
     parameters = os.environ.get("INPUT_PARAMETERS")
     cookies = os.environ.get("INPUT_COOKIES")
     wait = bool(os.environ.get("INPUT_WAIT"))
+    wait_start = bool(os.environ.get("INPUT_WAIT_START"))
     timeout = int(os.environ.get("INPUT_TIMEOUT"))
     start_timeout = int(os.environ.get("INPUT_START_TIMEOUT"))
     interval = int(os.environ.get("INPUT_INTERVAL"))
@@ -58,6 +59,10 @@ def main():
     queue_item = jenkins.build_job(job_name, **parameters)
 
     logging.info('Requested to build job.')
+
+    if not wait_start:
+        logging.info("Not waiting for build to start.")
+        return
 
     t0 = time()
     sleep(interval)
